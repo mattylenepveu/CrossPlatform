@@ -7,11 +7,11 @@ public class PlayerMove : MonoBehaviour {
 
     public float speed;
 
-    private Rigidbody rb;
+   
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+     
     }
 
     void FixedUpdate()
@@ -21,7 +21,7 @@ public class PlayerMove : MonoBehaviour {
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
-        rb.AddForce(movement * speed);
+        gameObject.GetComponent<Rigidbody>().AddForce(movement * speed);
     }
 
     void OnCollisionEnter(Collision other)
@@ -35,6 +35,20 @@ public class PlayerMove : MonoBehaviour {
             gameObject.transform.position = new Vector3(0, 0.5f, 0);
             gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
         }
+
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        
+        if (other.gameObject.name == "Coin")
+        {
+
+            Destroy(other.gameObject);
+            GM.coinTotal += 1;
+
+        }
+
 
     }
 
