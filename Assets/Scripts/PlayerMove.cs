@@ -38,18 +38,18 @@ public class PlayerMove : MonoBehaviour {
 
     }
 
-    //void OnTriggerEnter(Collider other)
-    //{
+    void OnTriggerEnter(Collider other)
+    {
         
-    //    if (other.gameObject.name == "Coin")
-    //    {
+        if (other.gameObject.name == "Coin")
+        {
 
-    //        Destroy(other.gameObject);
-    //        GM.coinTotal += 1;
+            Destroy(other.gameObject);
+            GM.coinTotal += 1;
 
-    //    }
+        }
 
 
-    //}
+    }
 
 }
