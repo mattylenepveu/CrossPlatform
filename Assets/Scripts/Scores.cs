@@ -14,8 +14,7 @@ public class Scores : MonoBehaviour {
     {
         if (gameObject.name == "Time")
         {
-            GetComponent<TextMesh>().text = "Time : " + Mathf.Round(GM.timeTotal * 100f) / 100f + "s";
+            GetComponent<TextMesh>().text = "Time : " + Mathf.Round(GM.timeTotal * 100f) / 100f + " seconds";
         }
-
     }
 }

@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class PlayerMove : MonoBehaviour {
-
+public class PlayerMove : MonoBehaviour
+{
     public float speed;
-
-   
 
     void Start()
     {
@@ -32,24 +30,17 @@ public class PlayerMove : MonoBehaviour {
         }
         if (other.gameObject.name == "DeathZone")
         {
-            gameObject.transform.position = new Vector3(0, 0.5f, 0);
-            gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
+            SceneManager.LoadScene("Game");
         }
-
     }
 
     void OnTriggerEnter(Collider other)
     {
-        
         if (other.gameObject.name == "Coin")
         {
-
             Destroy(other.gameObject);
             GM.coinTotal += 1;
-
         }
-
-
     }
 
 }
