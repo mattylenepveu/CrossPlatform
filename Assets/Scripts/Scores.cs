@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class Scores : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
+
+    //----------------------------------------------------
+    // Function to be called every frame
+    // Displays the time from the GM script in 3d text
+    //----------------------------------------------------
+    void Update ()
     {
-        if (gameObject.name == "Time")
+        if (gameObject.name == "Time") // Checks if the 3D texts name is Time
         {
-            GetComponent<TextMesh>().text = "Time : " + Mathf.Round(GM.timeTotal * 100f) / 100f + " seconds";
+            // Gets component and adds "time:" and the current time from the GM script
+            GetComponent<TextMesh>().text = "Time : " + Mathf.Round(GM.timeTotal * 100f) / 100f + " seconds"; 
         }
     }
 }
